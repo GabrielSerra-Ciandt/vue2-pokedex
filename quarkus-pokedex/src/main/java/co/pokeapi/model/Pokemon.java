@@ -8,7 +8,6 @@ public class Pokemon {
 
     private URL url;
 
-
     public String getName() {
         return name;
     }

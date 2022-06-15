@@ -1,7 +1,6 @@
 package co.pokeapi.service;
 
 import javax.enterprise.context.Dependent;
-
 @Dependent
 public class PokeGateway extends AbstractPokeService {
 

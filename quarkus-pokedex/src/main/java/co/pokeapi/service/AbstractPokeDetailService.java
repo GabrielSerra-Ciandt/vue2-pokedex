@@ -1,25 +1,25 @@
 package co.pokeapi.service;
 
-import co.pokeapi.model.PokeList;
+import co.pokeapi.model.PokeDetail;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 
-public abstract class AbstractPokeService implements PokeService{
+public abstract class AbstractPokeDetailService implements PokeDetailService{
 
         private final WebTarget target;
 
-    public AbstractPokeService (String domain){
+
+    public AbstractPokeDetailService(String domain){
 
         Client pokeClient = ClientBuilder.newClient();
         this.target = pokeClient.target(domain);
 
     }
     @Override
-    public PokeList getPokeList(){
-        System.out.println("AbstractPoke: " );
-        return target.request().get(PokeList.class);
+    public PokeDetail getPokeDetail(){
+        System.out.println("AbstractDetailPoke: " );
+        return target.request().get(PokeDetail.class);
     }
-
 }
