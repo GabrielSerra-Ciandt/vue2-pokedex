@@ -13,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 public class PokeResource {
     @Inject
     PokeService pokeService;
+    @Inject
     PokeDetailService pokeDetailService;
 
     @GET
@@ -29,7 +30,7 @@ public class PokeResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public PokeDetail pokeDetail() {
-        System.out.println("REsourceDetail: " );
+        System.out.println("ResourceDetail: " );
         return pokeDetailService.getPokeDetail();
 
     }
