@@ -1,6 +1,6 @@
 package co.pokeapi.service;
 
-import co.pokeapi.model.PokeList;
+import co.pokeapi.model.Pokemon;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -16,10 +16,10 @@ public abstract class AbstractPokeService implements PokeService{
         this.target = pokeClient.target(domain);
 
     }
-    @Override
-    public PokeList getPokeList(){
 
-        return target.request().get(PokeList.class);
-    }
+    @Override
+    public Pokemon getPokemon(){
+        return target.request().get(Pokemon.class);    }
+
 
 }

@@ -4,24 +4,23 @@ import java.net.URL;
 
 public class Pokemon {
 
-    private String name;
+    private Number count;
+    private Object results;
 
-    private URL url;
-
-    public String getName() {
-        return name;
+    public Number getCount() {
+        return count;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCount(Number count) {
+        this.count = count;
     }
 
-    public URL getUrl() {
-        return url;
+    public Object getResults() {
+        return results;
     }
 
-    public void setUrl(URL url) {
-        this.url = url;
+    public void setResults(Object results) {
+        this.results = results;
     }
 
 }

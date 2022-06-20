@@ -1,7 +1,7 @@
 package co.pokeapi.resource;
 
 import co.pokeapi.model.PokeDetail;
-import co.pokeapi.model.PokeList;
+import co.pokeapi.model.Pokemon;
 import co.pokeapi.service.PokeDetailService;
 import co.pokeapi.service.PokeService;
 
@@ -20,8 +20,8 @@ public class PokeResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public PokeList pokeList() {
-        return pokeService.getPokeList();
+    public Pokemon pokemon(){
+        return pokeService.getPokemon();
     }
 
     @GET
