@@ -18,7 +18,7 @@ public abstract class AbstractPokeService implements PokeService{
     }
     @Override
     public PokeList getPokeList(){
-        System.out.println("AbstractPoke: " );
+
         return target.request().get(PokeList.class);
     }
 

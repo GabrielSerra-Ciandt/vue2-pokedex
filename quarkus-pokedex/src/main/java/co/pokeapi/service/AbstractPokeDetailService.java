@@ -15,11 +15,10 @@ public abstract class AbstractPokeDetailService implements PokeDetailService{
 
         Client pokeClient = ClientBuilder.newClient();
         this.target = pokeClient.target(domain);
-
     }
+
     @Override
-    public PokeDetail getPokeDetail(){
-        System.out.println("AbstractDetailPoke: " );
-        return target.request().get(PokeDetail.class);
+    public PokeDetail getPokeDetail(String id){
+        return target.path(id).request().get(PokeDetail.class);
     }
 }
