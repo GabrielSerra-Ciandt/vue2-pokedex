@@ -7,6 +7,9 @@ public class PokeDetail {
     private String id;
     private Object abilities;
 
+
+    private Object forms;
+
     private Integer base_experience;
 
     private Integer height;
@@ -14,6 +17,25 @@ public class PokeDetail {
     private Object types;
 
     private Integer weight;
+
+    private Object sprites;
+
+    public Object getSprites() {
+        return sprites;
+    }
+
+    public void setSprites(Object sprites) {
+        this.sprites = sprites;
+    }
+
+    public Object getForms() {
+        return forms;
+    }
+
+    public void setForms(Object forms) {
+        this.forms = forms;
+    }
+
 
     public String getId() {
         return id;
