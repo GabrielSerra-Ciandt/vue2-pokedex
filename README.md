@@ -27,3 +27,4 @@ $ cd vue-pokedex
 $ npm run serve
 
 
+
