@@ -10,6 +10,19 @@ const apiController = {
                 res.status(500).send();
             });
         res.send(response.data);
+    },
+
+    getPokeDetail: async (req, res, pokeId) => {
+        const urlPokeDetail = urlPokeList + '/' + pokeId;
+        // console.log("urlPokeDetail ", urlPokeDetail);
+
+        const response = await axios.get(urlPokeDetail)
+            .catch((error) => {
+                console.log(error);
+                res.status(500).send();
+            });
+
+        res.send(response.data);
     }
 }
 
