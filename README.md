@@ -27,4 +27,13 @@ $ cd vue-pokedex
 $ npm run serve
 
 
-
+### Anotações
+[
+    pokmons:{
+        id:
+        name:
+        picture:
+    }
+]
+Pega numero id da url do pokemon
+(?<=pokemon\/)(.*)(?=\/)

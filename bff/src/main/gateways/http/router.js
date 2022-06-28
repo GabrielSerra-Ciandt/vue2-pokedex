@@ -1,14 +1,15 @@
-const apiController = require('./apiController');
+const { stringify } = require('querystring');
+const apiRepository = require('./apiRepository');
 
 module.exports = (router) => {
     router.get('/pokeapi', async (req, res) => {
-        await apiController.getPokeList(req, res);
+        await apiRepository.getPokeList(req, res);
     });
     
 
     router.get('/pokeapi/:pokeId', async (req, res) => {
-        await apiController.getPokeDetail(req, res, req.params['pokeId']);
-    });
-    
+        await apiRepository.getPokeDetail(req, res, req.params['pokeId']);
+    });    
+
     return router;
 };
