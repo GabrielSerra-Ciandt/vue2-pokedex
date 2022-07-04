@@ -2,25 +2,34 @@
   <div class="logo">
     <img alt="Pokemon Logo" src="../assets/PokemonLogo.png" />
     <SearchBar />
-    <Pokedex />
+    <PokeWall v-for="pokemon in this.pokemons" :key=pokemon.pokeId :pokemon="pokemon" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Pokedex from "@/components/Pokedex.vue";
+import PokeWall from "@/components/PokeWall.vue";
 import SearchBar from '@/components/SearchBar.vue';
+import pokeList from '../Client/pokeClient.js'
 
-export default {
+export default ({
   name: "PokeView",
   components: {
-    Pokedex,   
-    SearchBar
+    PokeWall,
+    SearchBar,
+    pokeList
   },
-};
+  data: () => ({
+    pokemons: []
+
+  }),
+  mounted: async function () {
+    this.pokemons = await pokeList.getPokeList();
+    console.log(this.pokemons);
+  }
+});
+
 </script>
-
-
 <style scoped>
 img {
   max-width: 30%;

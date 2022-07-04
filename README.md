@@ -28,12 +28,6 @@ $ npm run serve
 
 
 ### Anotações
-[
-    pokmons:{
-        id:
-        name:
-        picture:
-    }
-]
-Pega numero id da url do pokemon
-(?<=pokemon\/)(.*)(?=\/)
+matar porta
+$ lsof -i tcp:[numero da porta]
+$ kill -9 [pid]
