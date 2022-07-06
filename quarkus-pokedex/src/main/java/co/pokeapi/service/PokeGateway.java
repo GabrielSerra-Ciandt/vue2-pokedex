@@ -6,6 +6,6 @@ public class PokeGateway extends AbstractPokeService {
 
     public PokeGateway(){
 
-        super("https://pokeapi.co/api/v2/pokemon?limit=2000&offset=0");
+        super("https://pokeapi.co/api/v2/pokemon?limit=898&offset=0");
         }
 }
