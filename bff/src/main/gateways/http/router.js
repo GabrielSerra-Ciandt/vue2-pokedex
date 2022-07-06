@@ -2,7 +2,7 @@ const apiRepository = require('./pokeApiRepository');
 const pokeList = require('../../service/pokeListService.js');
 
 module.exports = (router) => {
-    router.get('/pokeapi', async (req, res) => {
+    router.get('/pokeapi', async (req, res) => {       
         await pokeList.getPokeApiList(req, res);
     });
 
