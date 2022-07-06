@@ -11,7 +11,7 @@ const pokeList = {
             })
         // console.log("Client", response.data);
         // return response.data.slice(0, 13);
-        return responsgie.data;        
+        return response.data;        
     }
 }
 
