@@ -1,11 +1,11 @@
 <template>
-    <div class="container">
-        <a v-bind:href="pokemon.urlPokePicture" class="deck">
-            <img v-bind:src="pokemon.urlPokePicture" alt="pokeName">
+    <div class="card">
+        <div class="deck">
+            <img v-bind:src="pokemon.urlPokePicture" alt="pokePicture">
             <span class="deck-title">
                 {{ pokemon.pokeName }}
             </span>
-        </a>        
+        </div>
     </div>
 </template>
 
@@ -26,22 +26,21 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.container {
+.card {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 1vw;
-    padding: 0 1vw;
+    margin: 1em;
 }
 
 .deck {
-    width: 340px;
+    width: 200px;
     height: fit-content;
     border: 1px solid #FFF;
     box-shadow: 5px 5px 5px #0006;
     flex-grow: 0.5;
     transition: transform 0.3s linear;
-    background-color: darkgray;    
+    background-color: darkgray;
     padding-bottom: 5px;
 }
 
@@ -53,15 +52,15 @@ export default Vue.extend({
 }
 
 .deck:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     opacity: 1;
 }
 
-.deck .deck-title {
+.deck-title {
     position: static;
     width: 100%;
     color: #FFF;
     padding: 10px;
-    font-size: 10pt;
+    font-size: 30px;
 }
 </style>
