@@ -13,15 +13,15 @@ const pokeApiRepository = {
         return (response.data);
     },
 
-    getPokeDetail: async (req, res, pokeId) => {
-        const urlPokeDetail = urlPokeList + '/' + pokeId;
+    getPokeDetail: async (req, res) => {
+        const urlPokeDetail = urlPokeList + '/' + req.params.pokeId;
         const response = await axios.get(urlPokeDetail)
             .catch((error) => {
                 console.log(error);
                 res.status(500).send();
             });
 
-        res.send(response.data);
+        return(response.data);
     }
 }
 
