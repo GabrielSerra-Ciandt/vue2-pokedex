@@ -10,7 +10,7 @@ const pokeList = {
                 console.log(error);
             })
         // console.log("Client", response.data);
-        // return response.data.slice(0, 13);
+        // return response.data.slice(0, 11);
         return response.data;        
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card" @click="clickedPokemon">
         <div class="deck">
             <img v-bind:src="pokemon.urlPokePicture" alt="pokePicture">
             <span class="deck-title">
@@ -14,6 +14,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
     name: "PokeCard",
+    emits:['toClickedPokemon'],
     props: {
         pokemon: {
             pokeId: Number,
@@ -21,12 +22,20 @@ export default Vue.extend({
             urlPokePicture: String,
             require: true
         }
+    },
+    methods: {
+        clickedPokemon() {
+            console.log("clicado", this.pokemon.pokeId);
+            this.$emit('toClickedPokemon', this.pokemon.pokeId);
+        }
     }
+
 })
 </script>
 
 <style scoped>
 .card {
+    cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -56,11 +65,12 @@ export default Vue.extend({
     opacity: 1;
 }
 
-.deck-title {
+.deck-title {    
     position: static;
     width: 100%;
     color: #FFF;
     padding: 10px;
     font-size: 30px;
+    text-transform: capitalize;
 }
 </style>
