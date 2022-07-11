@@ -9,22 +9,22 @@ const pokeListService = {
 
             for (let i = 0; i < pokeApiList.results.length; i++) {
                 let results = pokeApiList.results[i];
-                let pokeId = results.url.split("/")[6];
+                let pokemonId = results.url.split("/")[6];
                 let pokeName = results.name;
 
-                createPokeList(pokeId, pokeName);
+                createPokeList(pokemonId, pokeName);
             }
         }
         res.send(pokeList);
     }
 }
 
-function createPokeList(pokeId, pokeName) {
+function createPokeList(pokemonId, pokeName) {
 
     pokeList.push({
-        pokeId: pokeId,
+        pokemonId: pokemonId,
         pokeName: pokeName,
-        urlPokePicture: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeId}.png`
+        urlPokePicture: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
 
     });
 }

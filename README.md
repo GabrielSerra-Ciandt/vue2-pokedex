@@ -30,8 +30,10 @@ Manually select features
 
 # README.md
 
-## Start
-`$ mvn quarkus:dev`
+# Run
 
-## Run
-`$ cd vue-pokedex && npm run serve`
+## Instala todas as dependencias e inicia os serviços (Back, BFF, Front)
+`./iniServices.sh`
+
+## Inicia todos os Serviços (Back, BFF, Front)
+`./startServices.sh`
