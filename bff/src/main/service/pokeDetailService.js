@@ -1,14 +1,20 @@
 const apiRepository = require('../gateways/http/pokeApiRepository.js');
 
+const maxPokemons = 898;
 const pokemonDetail = {};
+
 const pokeDetailService = {
     getPokemonDatail: async (req, res) =>{  
         
+        if (req <= maxPokemons){       
         let results = await apiRepository.getPokeDetail(req, res);
         
         createPokemonDetail(results);
         console.log(pokemonDetail);//////////////////////////////////////Tirar console.log
         res.send(pokemonDetail);
+        }
+
+        res.status(500).send(`Pokemon ID out off range (Range=${maxPokemons})`)
     }
 
 }
