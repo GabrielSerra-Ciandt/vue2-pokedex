@@ -8,7 +8,7 @@ const app = express();
 
 app.use(cors())
 app.use(express.static(path));
-app.use('/', router);
+app.use('/pokeapi', router);
 
 app.listen(PORT, () => {
     console.log(`application running on port ${PORT}`);
