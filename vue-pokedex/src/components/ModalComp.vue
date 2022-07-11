@@ -20,7 +20,7 @@
                         Base Experience / Experiência
                     </p>
                     <p class="column is-pulled-right">
-                        {{ pokemonDetail[0].pokeId }} XP
+                        {{ pokemonDetail[0].pokemonId }} XP
                     </p>
                 </div>
                 <div class="columns">
@@ -28,7 +28,7 @@
                         Height / Altura
                     </p>
                     <p class="column is-pulled-right">
-                        {{ pokemonDetail[0].pokeId }} m
+                        {{ pokemonDetail[0].pokemonId }} m
                     </p>
                 </div>
                 <div class="columns">
@@ -36,7 +36,7 @@
                         Weight / Peso
                     </p>
                     <p class="column is-pulled-right">
-                        {{ pokemonDetail[0].pokeId }} kg
+                        {{ pokemonDetail[0].pokemonId }} kg
                     </p>
                 </div>
                 <hr>
@@ -74,7 +74,7 @@ export default Vue.extend({
             require: true
         },
         pokemonDetail: {
-            pokeId: Number,
+            pokemonId: Number,
             pokeName: String,
             urlPokePicture: String,
             require: true

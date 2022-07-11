@@ -3,7 +3,7 @@
     <img alt="Pokemon Logo" src="../assets/PokemonLogo.png" />
     <SearchBar />
     <div class="poke-wall">
-      <PokeWall v-for="pokemon in this.pokemons" :key=pokemon.pokeId :pokemon="pokemon"
+      <PokeWall v-for="pokemon in this.pokemons" :key=pokemon.pokemonId :pokemon="pokemon"
         @toClickedPokemon="selectPokemon" />
     </div>
 
@@ -46,7 +46,7 @@ export default ({
   methods: {
     selectPokemon(pokemonId) {
       console.log("selectPokemon", this.selectedPokemon);
-      this.selectedPokemon = this.pokemons.filter(pokemon => pokemon.pokeId === pokemonId);
+      this.selectedPokemon = this.pokemons.filter(pokemon => pokemon.pokemonId === pokemonId);
       console.log("selectPokemon", this.selectedPokemon);
     },
     closeModal() {      

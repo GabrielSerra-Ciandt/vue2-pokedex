@@ -17,7 +17,7 @@ export default Vue.extend({
     emits:['toClickedPokemon'],
     props: {
         pokemon: {
-            pokeId: Number,
+            pokemonId: Number,
             pokeName: String,
             urlPokePicture: String,
             require: true
@@ -25,8 +25,8 @@ export default Vue.extend({
     },
     methods: {
         clickedPokemon() {
-            console.log("clicado", this.pokemon.pokeId);
-            this.$emit('toClickedPokemon', this.pokemon.pokeId);
+            console.log("clicado", this.pokemon.pokemonId);
+            this.$emit('toClickedPokemon', this.pokemon.pokemonId);
         }
     }
 
