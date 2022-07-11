@@ -10,7 +10,7 @@
     <ModalComp :showModal="selectedPokemon != null" :pokemonDetail="selectedPokemon">
       <template v-slot:detailModal></template>
       <template v-slot:foot>
-        <button @click="closeModal" class="button is-danger">Close</button>
+        <button @click="closeModal" class="button is-danger">Close / Fechar</button>
       </template>
     </ModalComp>
   </div>
@@ -45,13 +45,11 @@ export default ({
   },
   methods: {
     selectPokemon(pokemonId) {
-
       console.log("selectPokemon", this.selectedPokemon);
       this.selectedPokemon = this.pokemons.filter(pokemon => pokemon.pokeId === pokemonId);
       console.log("selectPokemon", this.selectedPokemon);
     },
-    closeModal() {
-      console.log("CLOOOSE")
+    closeModal() {      
       this.selectedPokemon = null;
     }
   }
