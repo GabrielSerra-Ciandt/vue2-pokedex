@@ -1,32 +1,23 @@
 const apiRepository = require('../gateways/http/pokeApiRepository.js');
+const mapperPokemons = require('../mapper/mapperPokemons.js')
 
-const pokeList = [];
 const pokeListService = {
     getPokeApiList: async (req, res) => {
-        if (!pokeList[0]) {
+        if (!mapperPokemons.getPokemonsList()[0]) {
 
             const pokeApiList = await apiRepository.getPokeApiList(req, res);
 
             for (let i = 0; i < pokeApiList.results.length; i++) {
-                let results = pokeApiList.results[i];
-                let pokemonId = results.url.split("/")[6];
-                let pokeName = results.name;
+                const result = pokeApiList.results[i];
+                const pokemonId = result.url.split("/")[6];
+                const pokemonName = result.name;
 
-                createPokeList(pokemonId, pokeName);
+                mapperPokemons.createPokemonsList(pokemonId, pokemonName);
+
             }
         }
-        res.send(pokeList);
+        res.send(mapperPokemons.getPokemonsList());
     }
-}
-
-function createPokeList(pokemonId, pokeName) {
-
-    pokeList.push({
-        pokemonId: pokemonId,
-        pokeName: pokeName,
-        urlPokePicture: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
-
-    });
 }
 
 module.exports = pokeListService;
