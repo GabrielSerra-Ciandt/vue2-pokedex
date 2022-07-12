@@ -39,9 +39,7 @@ export default ({
     }
   },
   mounted: async function () {
-    
-      this.pokemons = await PokeClient.getPokeList();
-    
+    this.pokemons = await PokeClient.getPokeList();
   },
   methods: {
     async selectPokemon(pokemonId) {
