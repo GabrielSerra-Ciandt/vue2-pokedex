@@ -11,7 +11,7 @@ const pokeDetailService = {
 
         } else {
 
-            let result = await apiRepository.getPokeDetail(req, res);
+            const result = await apiRepository.getPokeDetail(req, res);
 
             console.log(createPokemonDetail.getPokemonDetail(result)); //////////////////////////////////////Tirar console.log
             res.send(createPokemonDetail.getPokemonDetail(result));

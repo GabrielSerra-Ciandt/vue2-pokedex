@@ -1,16 +1,19 @@
 
-const pokemonsList = [];
 const mapperPokemons = {
-    createPokemonsList: (pokemonId, pokemonName) => {
+    createPokemonsList: (pokeApiList) => {
+        const pokemonsList = [];
 
-        pokemonsList.push({
-            pokemonId: pokemonId,
-            pokemonName: pokemonName,
-            urlPokePicture: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
-        });
-    },
+        for (const pokemon of pokeApiList.results) {
 
-    getPokemonsList: () => {
+            const pokemonId = pokemon.url.split("/")[6];
+            const pokemonName = pokemon.name;
+
+            pokemonsList.push({
+                pokemonId: pokemonId,
+                pokemonName: pokemonName,
+                urlPokePicture: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
+            });
+        }
         return pokemonsList;
     }
 }
