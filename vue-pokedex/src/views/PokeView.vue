@@ -17,20 +17,20 @@
 </template>
 
 <script>
+import ModalComp from '@/components/ModalComp.vue';
 import PokeWall from "@/components/PokeWall.vue";
 import SearchBar from '@/components/SearchBar.vue';
-import PokeList from '../Client/pokeClient.js';
-import ModalComp from '@/components/ModalComp.vue';
+import PokeClient from '../Client/pokeClient.js';
 
 export default ({
   name: "PokeView",
   components: {
     PokeWall,
     SearchBar,
-    PokeList,
+    PokeClient,
     ModalComp
 
-  },  
+  },
   data() {
     return {
       pokemons: [],
@@ -39,23 +39,26 @@ export default ({
     }
   },
   mounted: async function () {
-    if (!this.pokemons[0]) {
-      this.pokemons = await PokeList.getPokeList();
-    }
+    
+      this.pokemons = await PokeClient.getPokeList();
+    
   },
   methods: {
-    selectPokemon(pokemonId) {
-      console.log("selectPokemon", this.selectedPokemon);
-      this.selectedPokemon = this.pokemons.filter(pokemon => pokemon.pokemonId === pokemonId);
-      console.log("selectPokemon", this.selectedPokemon);
+    async selectPokemon(pokemonId) {
+      console.log("pokeId", pokemonId); ///////////////LOG
+
+      this.selectedPokemon = await PokeClient.getPokeDetail(pokemonId);
+
+      console.log("selectPokemon", this.selectedPokemon); //////////LOG
     },
-    closeModal() {      
+    closeModal() {
       this.selectedPokemon = null;
     }
   }
 });
 
 </script>
+
 <style scoped>
 .poke-wall {
   display: flex;

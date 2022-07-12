@@ -3,7 +3,7 @@
         <div class="deck">
             <img v-bind:src="pokemon.urlPokePicture" alt="pokePicture">
             <span class="deck-title">
-                {{ pokemon.pokeName }}
+                {{ pokemon.pokemonName }}
             </span>
         </div>
     </div>
@@ -18,7 +18,7 @@ export default Vue.extend({
     props: {
         pokemon: {
             pokemonId: Number,
-            pokeName: String,
+            pokemonName: String,
             urlPokePicture: String,
             require: true
         }

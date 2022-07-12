@@ -4,13 +4,13 @@
         <div class="modal-card">
             <div class="pokemonPicture">
                 <figure class="image is-128x128">
-                    <img class="is-rounded" v-bind:src="pokemonDetail[0].urlPokePicture">
+                    <img class="is-rounded" v-bind:src="pokemonDetail.picture">
                 </figure>
             </div>
             <header class="modal-card-head">
                 <div>
                     <h1 class="modal-card-title">
-                        {{ pokemonDetail[0].pokeName }}
+                        {{ pokemonDetail.name }}
                     </h1>
                 </div>
             </header>
@@ -20,7 +20,7 @@
                         Base Experience / Experiência
                     </p>
                     <p class="column is-pulled-right">
-                        {{ pokemonDetail[0].pokemonId }} XP
+                        {{ pokemonDetail.baseExperience }} XP
                     </p>
                 </div>
                 <div class="columns">
@@ -28,7 +28,7 @@
                         Height / Altura
                     </p>
                     <p class="column is-pulled-right">
-                        {{ pokemonDetail[0].pokemonId }} m
+                        {{ pokemonDetail.height }} m
                     </p>
                 </div>
                 <div class="columns">
@@ -36,7 +36,7 @@
                         Weight / Peso
                     </p>
                     <p class="column is-pulled-right">
-                        {{ pokemonDetail[0].pokemonId }} kg
+                        {{ pokemonDetail.weight }} kg
                     </p>
                 </div>
                 <hr>
@@ -45,14 +45,14 @@
                         Pokemon Types / Tipos
                     </h2>
                     <p>
-                        tipo 1 tipo 2
+                        {{ pokemonDetail.type1 }} | {{ pokemonDetail.type2 }}
                     </p>
                     <hr>
                     <h2>
                         Abilities / Habilidades
                     </h2>
                     <p>
-                        tiopo A tipo B
+                        {{ pokemonDetail.ability1 }} | {{ pokemonDetail.ability2 }}
                     </p>
                 </div>
             </section>
@@ -74,16 +74,26 @@ export default Vue.extend({
             require: true
         },
         pokemonDetail: {
-            pokemonId: Number,
-            pokeName: String,
-            urlPokePicture: String,
-            require: true
+            id: Number,
+            name: String,
+            picture: String,
+            baseExperience: String,
+            height: Number,
+            weight: Number,
+            type1: String,
+            type2: String,
+            ability1: String,
+            ability2: String,
         },
     },
 });
 </script>
 
 <style scoped>
+.modal {
+    text-transform: capitalize;
+}
+
 .pokemonPicture {
     align-self: center;
 }
@@ -95,7 +105,7 @@ img {
 }
 
 h1 {
-    text-transform: capitalize;
+
     font-weight: bold;
     font-size: 25px;
 }
