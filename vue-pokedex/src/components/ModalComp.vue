@@ -158,7 +158,7 @@ button[data-result-val="fairy"] {
 
 img {
     background: orange;
-    box-shadow: 5px 15px 15px 1px grey;
+    box-shadow: 5px 15px 15px 1px black;
 }
 
 

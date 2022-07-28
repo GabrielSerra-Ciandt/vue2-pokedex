@@ -14,7 +14,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
     name: "PokeCard",
-    emits:['toClickedPokemon'],
+    emits: ['toClickedPokemon'],
     props: {
         pokemon: {
             pokemonId: Number,
@@ -25,7 +25,7 @@ export default Vue.extend({
     },
     methods: {
         clickedPokemon() {
-            console.log("clicado", this.pokemon.pokemonId);
+            console.log("clicado", this.pokemon.pokemonId); ////////////////LOG
             this.$emit('toClickedPokemon', this.pokemon.pokemonId);
         }
     }
@@ -40,6 +40,7 @@ export default Vue.extend({
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 1em;
+
 }
 
 .deck {
@@ -51,6 +52,8 @@ export default Vue.extend({
     transition: transform 0.3s linear;
     background-color: darkgray;
     padding-bottom: 5px;
+  /* border-radius: 20px; */ /*verificar borda background da figura */
+
 }
 
 .deck img {
@@ -58,19 +61,23 @@ export default Vue.extend({
     height: 100%;
     object-fit: cover;
     offset-position: center;
+    
 }
 
 .deck:hover {
     transform: scale(1.05);
     opacity: 1;
+
+
 }
 
-.deck-title {    
+.deck-title {
     position: static;
     width: 100%;
     color: #FFF;
     padding: 10px;
     font-size: 30px;
     text-transform: capitalize;
+    
 }
 </style>

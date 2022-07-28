@@ -10,8 +10,8 @@ const pokeClient = {
                 console.log(error);
             })
         // console.log("Client", response.data); //////////////////// LOG
-        return response.data.slice(0, 11);
-        // return response.data;        
+        // return response.data.slice(0, 11); ////////////////////////retirar
+        return response.data;        
     },
 
     getPokeDetail: async (req, res) => {
