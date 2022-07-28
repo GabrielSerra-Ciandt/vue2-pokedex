@@ -2,6 +2,7 @@
   <div class="logo">
     <img alt="Pokemon Logo" src="../assets/PokemonLogo.png" />
     <SearchBar v-on:pokemonFilter="filterPokemon" />
+
     <div class="notifi">
       <Notification v-if="this.renderPokemons.length === 0" />
     </div>

@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/poke",
+    path: "/",
     name: "poke",
     component: () => import("../views/PokeView.vue"),
   },

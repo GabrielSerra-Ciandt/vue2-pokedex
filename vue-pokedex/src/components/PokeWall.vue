@@ -37,10 +37,11 @@ export default Vue.extend({
 .card {
     cursor: pointer;
     display: flex;
+    height: fit-content;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 1em;
-
+    border-radius: 15px;    
 }
 
 .deck {
@@ -49,11 +50,9 @@ export default Vue.extend({
     border: 1px solid #FFF;
     box-shadow: 5px 5px 5px #0006;
     flex-grow: 0.5;
-    transition: transform 0.3s linear;
+    transition: transform 0.1s linear;
     background-color: darkgray;
-    padding-bottom: 5px;
-  /* border-radius: 20px; */ /*verificar borda background da figura */
-
+    border-radius: 15px;
 }
 
 .deck img {

@@ -41,6 +41,7 @@ export default Vue.extend({
 <style scoped>
 .search {
     padding-top: 5px;
+    padding-bottom: 5px;
     flex-wrap: wrap;
     margin-inline: 200px;
     /* max-inline-size: 600px;   */
