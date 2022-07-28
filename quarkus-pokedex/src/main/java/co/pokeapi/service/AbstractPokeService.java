@@ -6,11 +6,11 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 
-public abstract class AbstractPokeService implements PokeService{
+public abstract class AbstractPokeService implements PokeService {
 
-        private final WebTarget target;
+    private final WebTarget target;
 
-    public AbstractPokeService (String domain){
+    public AbstractPokeService(String domain) {
 
         Client pokeClient = ClientBuilder.newClient();
         this.target = pokeClient.target(domain);
@@ -18,8 +18,7 @@ public abstract class AbstractPokeService implements PokeService{
     }
 
     @Override
-    public Pokemon getPokemon(){
-        return target.request().get(Pokemon.class);    }
-
-
+    public Pokemon getPokemon() {
+        return target.request().get(Pokemon.class);
+    }
 }
