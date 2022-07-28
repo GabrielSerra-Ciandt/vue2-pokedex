@@ -37,3 +37,6 @@ Manually select features
 
 ## Inicia todos os Serviços (Back, BFF, Front)
 `./startServices.sh`
+
+## abrir a pagina
+http://localhost:8081/pokeapi/
