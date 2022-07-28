@@ -69,6 +69,7 @@ export default ({
 }
 
 img {
+  padding-top: 35px;
   max-width: 35%;
   max-height: 35%;
 }
